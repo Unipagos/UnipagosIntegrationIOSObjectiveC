@@ -42,4 +42,15 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    UIAlertView* alert =[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"returns %@", sourceApplication]
+                                                   message:[NSString stringWithFormat:@"%@", url]
+                                                  delegate:nil
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil, nil];
+    [alert show];
+    return YES;
+}
 @end
