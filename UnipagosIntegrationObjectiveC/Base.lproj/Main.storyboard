@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,63 +21,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipiente (MDN)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLe-kC-6pf">
-                                <rect key="frame" x="10" y="20" width="300" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipiente (MDN)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLe-kC-6pf">
+                                <rect key="frame" x="60.5" y="40" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="e2Y-Mc-kfT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="jmi-6y-F5I"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cantidad" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ULN-Qb-vOW">
-                                <rect key="frame" x="10" y="60" width="300" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cantidad" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ULN-Qb-vOW">
+                                <rect key="frame" x="60.5" y="80" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="J5H-iS-AYx"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Referencia" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9if-wB-psc">
-                                <rect key="frame" x="10" y="100" width="300" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Referencia" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9if-wB-psc">
+                                <rect key="frame" x="60.5" y="120" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NUh-hc-z50"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Referencia Texto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qsi-RA-4EI">
-                                <rect key="frame" x="10" y="140" width="300" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Referencia Texto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qsi-RA-4EI">
+                                <rect key="frame" x="60" y="160" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="f3c-GT-T4O"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzB-tM-5bH">
-                                <rect key="frame" x="137" y="180" width="46" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requires Validation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlN-vk-Oce">
+                                <rect key="frame" x="60" y="210" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KWb-MH-6Nw">
+                                <rect key="frame" x="211" y="205" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzB-tM-5bH">
+                                <rect key="frame" x="140" y="251" width="40" height="30"/>
                                 <state key="normal" title="Pagar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYd-F1-EY7"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ULN-Qb-vOW" firstAttribute="leading" secondItem="bLe-kC-6pf" secondAttribute="leading" id="0gw-fg-YfN"/>
+                            <constraint firstItem="9if-wB-psc" firstAttribute="trailing" secondItem="bLe-kC-6pf" secondAttribute="trailing" id="3kH-1p-jhm"/>
+                            <constraint firstItem="Qsi-RA-4EI" firstAttribute="trailing" secondItem="bLe-kC-6pf" secondAttribute="trailing" id="5MA-E8-nXm"/>
+                            <constraint firstItem="yzB-tM-5bH" firstAttribute="top" secondItem="IlN-vk-Oce" secondAttribute="bottom" constant="20" id="BuO-gB-ojR"/>
+                            <constraint firstItem="Qsi-RA-4EI" firstAttribute="leading" secondItem="bLe-kC-6pf" secondAttribute="leading" id="DqI-gA-heH"/>
+                            <constraint firstItem="KWb-MH-6Nw" firstAttribute="top" secondItem="Qsi-RA-4EI" secondAttribute="bottom" constant="15" id="GE2-Pg-ban"/>
+                            <constraint firstItem="KWb-MH-6Nw" firstAttribute="leading" secondItem="IlN-vk-Oce" secondAttribute="trailing" constant="5" id="O0G-Me-diw"/>
                             <constraint firstAttribute="centerX" secondItem="bLe-kC-6pf" secondAttribute="centerX" id="UFt-rJ-YUA"/>
+                            <constraint firstItem="KWb-MH-6Nw" firstAttribute="trailing" secondItem="Qsi-RA-4EI" secondAttribute="trailing" id="W6m-z7-YHE"/>
+                            <constraint firstItem="yzB-tM-5bH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WLx-lj-J50"/>
+                            <constraint firstItem="IlN-vk-Oce" firstAttribute="leading" secondItem="Qsi-RA-4EI" secondAttribute="leading" id="auj-6f-teS"/>
+                            <constraint firstItem="ULN-Qb-vOW" firstAttribute="trailing" secondItem="bLe-kC-6pf" secondAttribute="trailing" id="egm-Ut-qX9"/>
+                            <constraint firstItem="bLe-kC-6pf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="mI6-ev-6VG"/>
+                            <constraint firstItem="Qsi-RA-4EI" firstAttribute="top" secondItem="9if-wB-psc" secondAttribute="bottom" constant="10" id="pkA-4Z-akN"/>
+                            <constraint firstItem="9if-wB-psc" firstAttribute="top" secondItem="ULN-Qb-vOW" secondAttribute="bottom" constant="10" id="ruJ-at-Q7q"/>
+                            <constraint firstItem="IlN-vk-Oce" firstAttribute="top" secondItem="Qsi-RA-4EI" secondAttribute="bottom" constant="20" id="tUF-Bw-dGX"/>
+                            <constraint firstItem="ULN-Qb-vOW" firstAttribute="top" secondItem="bLe-kC-6pf" secondAttribute="bottom" constant="10" id="vsY-14-63Y"/>
+                            <constraint firstItem="9if-wB-psc" firstAttribute="leading" secondItem="bLe-kC-6pf" secondAttribute="leading" id="wKV-LI-oDW"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="amountText" destination="ULN-Qb-vOW" id="jYB-9g-8v6"/>
                         <outlet property="recipientText" destination="bLe-kC-6pf" id="KOy-qb-Hki"/>
                         <outlet property="refIdText" destination="9if-wB-psc" id="5PD-mg-Rwz"/>
                         <outlet property="refText" destination="Qsi-RA-4EI" id="scl-GO-FF9"/>
+                        <outlet property="validationSwitch" destination="KWb-MH-6Nw" id="xz5-dq-0DL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33.75" y="30.633802816901408"/>
         </scene>
     </scenes>
 </document>

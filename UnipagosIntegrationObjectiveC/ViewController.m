@@ -13,7 +13,19 @@
 @property IBOutlet UITextField *amountText;
 @property IBOutlet UITextField *refIdText;
 @property IBOutlet UITextField *refText;
+@property IBOutlet UISwitch *validationSwitch;
+
 @end
+
+
+static const NSString* kPaymentURLiteralAmount = @"a";
+static const NSString* kPaymentURLiteralRecipientID = @"r";
+static const NSString* kPaymentURLiteralReferenceID = @"i";
+static const NSString* kPaymentURLiteralCallbackURL = @"url";
+static const NSString* kPaymentURLiteralReferenceText = @"t";
+static const NSString* kPaymentURLiteralNeedsUserValidation = @"v";
+static const NSString* kPaymentURLiteralURLScheme = @"unipagos://pay";
+
 
 @implementation ViewController
 
@@ -33,12 +45,21 @@
     NSString *amountString = _amountText.text;
     NSString *refIdString = _refIdText.text;
     NSString *refString = _refText.text;
-    [uri appendFormat:@"unipagos://pay?r=@(mdn:%@)&a=%@", recipientString, amountString];
+    [uri appendFormat:@"%@?%@=@(mdn:%@)&%@=%@", kPaymentURLiteralURLScheme,
+     kPaymentURLiteralRecipientID,
+     recipientString,
+     kPaymentURLiteralAmount,
+     amountString];
+    
     if (refIdString.length) {
-        [uri appendFormat:@"&i=%@", refIdString];
+        [uri appendFormat:@"&%@=%@",kPaymentURLiteralReferenceID, refIdString];
     }
     if ([refString length]) {
-        [uri appendFormat:@"&t=%@", refString];
+        [uri appendFormat:@"&%@=%@",kPaymentURLiteralReferenceText, refString];
+    }
+    
+    if(_validationSwitch.isOn){
+        [uri appendFormat:@"&%@=true", kPaymentURLiteralNeedsUserValidation];
     }
     
     //it's important that the url callback has the suffix "://"
