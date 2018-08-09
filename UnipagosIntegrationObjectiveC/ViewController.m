@@ -26,6 +26,10 @@ static const NSString* kPaymentURLiteralReferenceText = @"t";
 static const NSString* kPaymentURLiteralNeedsUserValidation = @"v";
 static const NSString* kPaymentURLiteralURLScheme = @"unipagos://pay";
 
+//you will use one of these two
+static const NSString* kPaymentURLiteralMerchant = @"merchant";
+static const NSString* kPaymentURLiteralMDN = @"mdn";
+
 
 @implementation ViewController
 
@@ -45,8 +49,9 @@ static const NSString* kPaymentURLiteralURLScheme = @"unipagos://pay";
     NSString *amountString = _amountText.text;
     NSString *refIdString = _refIdText.text;
     NSString *refString = _refText.text;
-    [uri appendFormat:@"%@?%@=@(mdn:%@)&%@=%@", kPaymentURLiteralURLScheme,
+    [uri appendFormat:@"%@?%@=@(%@:%@)&%@=%@", kPaymentURLiteralURLScheme,
      kPaymentURLiteralRecipientID,
+     kPaymentURLiteralMDN,
      recipientString,
      kPaymentURLiteralAmount,
      amountString];
@@ -54,7 +59,7 @@ static const NSString* kPaymentURLiteralURLScheme = @"unipagos://pay";
     if (refIdString.length) {
         [uri appendFormat:@"&%@=%@",kPaymentURLiteralReferenceID, refIdString];
     }
-    if ([refString length]) {
+    if (refString.length) {
         [uri appendFormat:@"&%@=%@",kPaymentURLiteralReferenceText, refString];
     }
     
@@ -63,7 +68,7 @@ static const NSString* kPaymentURLiteralURLScheme = @"unipagos://pay";
     }
     
     //it's important that the url callback has the suffix "://"
-         [uri appendString:[NSString stringWithFormat:@"%@%@%@",
+    [uri appendString:[NSString stringWithFormat:@"%@%@%@",
                        @"&url=",
                        [self getRegisteredURLScheme],
                        @"://"]];
